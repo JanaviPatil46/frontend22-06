@@ -1,0 +1,187 @@
+.table-wrapper {
+  max-height: 450px;
+  overflow: auto;
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+   width: 100%;
+}
+
+table tbody td {
+  font-size: 12px;
+  border: none;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+table th {
+  text-align: center;
+  }
+
+table thead th {
+  background-color: #f2f2f2;
+  color: black;
+  font-size: 14px;
+  border: none;
+  position: sticky;
+  top: 0;
+  border:1px solid rgb(224, 221, 221)
+}
+
+table tr {
+  background-color: #f2f2f2;
+}
+
+tbody {
+  margin-top: 40px;
+  overflow: auto;
+}
+
+.fixed-row {
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+  background-color: #f2f2f2;
+}
+
+.fixed-column {
+  position: sticky;
+  left: 0;
+    z-index: 100;
+    background-color: #f2f2f2;
+  }
+
+.fixed-cell {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 100; 
+  background-color: #f2f2f2;
+}
+
+.fixed-column td {
+  position: sticky;
+  left: 0;
+ }
+
+.acc-name {
+  text-decoration: none;
+  color: var(--text-color);
+  width: 150px;
+}
+
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.pagination input[type="number"] {
+  padding: 3px;
+  margin-right: 5px;
+}
+
+.pagination select {
+  padding: 3px;
+}
+
+.circle_account {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: -5px;
+  font-size: 10px;
+}
+
+
+.send-email-form {
+  position: fixed;
+  top: 0;
+  right: -600px; 
+  width: 600px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  border-radius: 10px 0 0 10px;
+}
+
+.email-form-open {
+  right: 0;
+}
+.send-email-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.send-email-container{
+  padding: 15px;
+}
+.contact-temp{
+  margin-top: 10px;
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+.select-email{
+  margin-top: 10px;
+}
+/* .texteditor{
+  margin: 15px 0;
+  border: 2px solid red;
+} */
+.dropdown-menu{
+  position: relative;
+   
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+/* left: 25; */
+/* margin-left: 80%; */
+    /* width: 350px; */
+    width: 200px;
+    height: 250px;
+    overflow: auto;
+}
+.dropdown-item{
+  margin: 10px  0;
+  background-color: #fff;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+.scheduled-emails-label{
+  margin: 0 10px;
+}
+.buttons-email{
+  padding: 25px 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.datetime{
+padding: 20px 0;
+}

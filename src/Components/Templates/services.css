@@ -1,0 +1,176 @@
+/* 
+
+
+.service-form-container{
+    position: fixed;
+    top: 0;
+    right: -40%; 
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .service-form-open {
+    right: 0;
+  }
+
+
+  .service_header_title{
+    padding: 30px;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .services-form{
+   border: 2px solid blue; 
+   margin: 20px;
+  }
+  .services-form  h3{
+  margin-left: 30px;
+  margin-top: 30px;
+  }
+
+
+  .input-box-service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-box-service > div {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  
+  
+  .input-box-service input[type='text']
+  {
+    padding: 8px 12px;
+    width: 100%;
+    border: 2px solid rgb(100, 149, 237);
+    border-radius: 10px;
+  
+  }
+  .input-box-service select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+  }
+  
+ */
+
+ 
+
+
+.service-form-container{
+  position: fixed;
+  top: 0;
+  right: -40%; 
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+  border-radius: 15px 0 0 15px;
+}
+
+.service-form-open {
+  right: 0;
+}
+
+
+.service_header_title{
+  padding: 30px;
+  display: flex;
+  /* background-color: rgb(218, 216, 216); */
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.services-form{
+ margin: 20px;
+}
+.services-form  h3{
+margin-left: 30px;
+margin-top: 30px;
+}
+
+
+.input-box-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-box-service > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+
+
+.input-box-service input[type='text']
+{
+  padding: 8px 12px;
+  width: 100%;
+  border: 2px solid rgb(100, 149, 237);
+  border-radius: 10px;
+
+}
+.input-box-service select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ 
+}
+
+.service-category{
+  margin: 20px;
+ }
+ .service-category  h3{
+ margin-left: 30px;
+ margin-top: 30px;
+ }
+
+ .category-form-container,.category-form-container{
+  position: fixed;
+  top: 0;
+  right: -40%; 
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+  border-radius: 15px 0 0 15px;
+  z-index: 100;
+}
+
+.category-form-open,.category-form-open {
+  right: 0;
+}
+
+.category-form_header_title{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #e2e8f0;
+}
+
+
+

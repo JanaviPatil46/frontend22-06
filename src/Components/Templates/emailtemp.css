@@ -1,0 +1,179 @@
+/* .panel__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.panel__subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+.dropdown {
+  position: relative;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 400px;
+}
+
+.dropdown-list {
+  margin: 2px 0 0;
+  background-color: #fff;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 20px;
+} */
+
+ 
+.panel__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.panel__subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+/* .dropdown {
+  position: relative;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 400px;
+} */
+
+.dropdown-list {
+  margin: 2px 0 0;
+  background-color: #fff;
+  color: black;
+  font-size: 12px;
+  text-align: center;}
+ 
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: none;
+  color: rgb(14, 126, 255);
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border: none;
+}
+
+.dropdown-button:hover {
+ color: blue;
+}
+
+.dropdown-menu {
+  /* display: block; */
+  /* position: relative; */
+  background-color: #f9f9f9;
+  overflow-y: auto;
+
+    min-width: 300px;
+  /* max-height: 250px;  */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  cursor: pointer;
+
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.html-view{
+  width: 50%;
+  height: 150px;
+} 
+ 
+
+.email-temp-create{
+  display: flex;
+gap:10px
+}
+.panel{
+  
+  width: 50%;
+  /* border: 1px solid red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

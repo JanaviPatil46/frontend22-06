@@ -1,0 +1,38 @@
+.chat_tasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(153, 151, 151);
+}
+
+.select-chat {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    height: 80vh;
+}
+
+
+.Chat_with_SNP {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column
+}
+
+.Chat_with_SNP p {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px;
+    color: rgb(87, 86, 86);
+}
+
+.select-chat span {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.missing-info {
+    display: flex;
+
+}

@@ -1,0 +1,61 @@
+.account-settings{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-top: 20px;
+}
+.accounts-details-user{
+    /* border: 1px solid red; */
+    height: 100vh;
+}
+.notifiaction-details{
+    /* border: 1px solid blue; */
+    height: auto;
+}
+
+.personal-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hr {
+    flex: 1;
+    border-bottom: 2px solid rgb(140, 140, 206);
+    
+}
+
+.user-profile-container {
+    align-items: center; /* Adjust margin as needed */
+}
+.contact-details{
+    margin-top: 20px;
+}
+ 
+.login-details-user,.authentication
+{
+margin-top: 30px;
+} 
+.login-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.overlay-login-container {
+    max-width: 430px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  .preferences-header{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* border-bottom: 2px solid blue; */
+  }
+  
+  .preferences{
+    padding-top: 15px;
+  }
+.emailsyns{
+    margin-top: 25px;
+}

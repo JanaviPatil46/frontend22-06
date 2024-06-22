@@ -1,0 +1,21 @@
+.invoice-template {
+    display: flex;
+}
+
+.invoice-form {
+    width: 35%;
+    padding: 15px 15px 15px 0;
+}
+
+.invoice-temp-bts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.one-time-summary{
+    margin-top: 15px;
+}
+.invoice-switch{
+    margin-top: 30px;
+}

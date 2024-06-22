@@ -1,0 +1,350 @@
+.client-dashboard {
+    display: grid;
+    /* border: 2px solid red; */
+    /* gap: 5px; */
+    grid-template-columns: 7fr 4fr;
+    /* grid-template-rows: 95vh; */
+    grid-template-rows: 100vh;
+
+}
+
+/*  */
+/* .one {
+    border: 1px solid blue;
+  
+} */
+
+
+/*  */
+/* .middle-container {
+    border: 1px solid green;
+} */
+
+.middle-container-tittle {
+    /* text-align: center; */
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.dashbord-organizers {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.organizer-dashboard p {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.see-all p {
+    margin-right: 20px;
+    color: #1976d3;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.all-organizers {
+    display: flex;
+    flex-direction: column;
+}
+
+.organizer-client {
+    /* height: 50px; */
+    padding: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 1px solid #00000000;
+    border-width: 1px;
+    border-bottom: 2px solid #e2e8f0;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #0f172a;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.organizer-icon {
+    color: rgb(255, 142, 0);
+    margin-top: 10px;
+    font-size: 23px;
+    display: flex;
+
+}
+
+.organizer-icon p {
+    color: #697991;
+    font-size: 14px;
+    font-weight: 400;
+    /* margin-bottom: 40px; */
+    margin: 0 auto;
+    margin-left: 8px;
+}
+
+.complete p {
+    color: #1976d3;
+}
+
+.dashboard-billing {
+    font-family: sans-serif, Source Sans Pro;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.dashboard-pay-invoice {
+
+    padding: 25px;
+    /* margin-top: 20px; */
+    cursor: pointer;
+    /* border: 1px solid #00000000; */
+    border-width: 1px;
+    border-bottom: 2px solid #e2e8f0;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #0f172a;
+    margin-right: 20px;
+    /* border: 1px solid red; */
+}
+
+.client_Pay_invoice label {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dashbord-invoice-icon {
+    color: rgb(36, 200, 117);
+    margin-top: 10px;
+    font-size: 23px;
+    display: flex;
+
+}
+
+.dashbord-invoice-icon p {
+    color: #697991;
+    font-size: 14px;
+    font-weight: 400;
+    /* margin-bottom: 40px; */
+    margin: 0 auto;
+    margin-left: 8px;
+}
+
+/*  */
+.right {
+    /* border: 1px solid black; */
+    box-shadow: 10px 8px 3px #888888;
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+}
+
+.quik-links {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px
+}
+
+/* .dashboard-folder-temp{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 16px;
+} */
+
+
+/* .dashboard-upload-documents{
+    display: flex;
+    align-items: center;
+    color: #1976d3;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.dashboard-upload-folder{
+    display: flex;
+    align-items: center;
+    color: #1976d3;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+} */
+
+
+
+.balance {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.Credits_Balance {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 45px;
+    margin-top: 20px;
+
+}
+
+.Credits_available {
+    display: flex;
+    flex-direction: column;
+}
+
+.Credits_available h2 {
+    color: #697991;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+}
+
+.Credits_available p {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.Outstanding_Balance {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+
+
+}
+
+.Outstanding_Balance h2 {
+    color: #697991;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+
+}
+
+.Outstanding_Balance p {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.dashboard-contact-info {
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.dashboard-contact-info-tittle h2 {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.client-dash-phn {
+    margin-bottom: 15px;
+}
+
+.client-dash-phn p {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #697991;
+    margin: 0;
+
+}
+
+.client-dash-address p {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #697991;
+    margin: 0;
+}
+
+.client-dash-address span {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0f172a;
+}
+
+
+.client-dash-email {
+    margin-top: 15px;
+}
+
+.client-dash-email p {
+    margin: 0;
+}
+
+.client-dash-website {
+    margin-top: 15px;
+}
+
+.client-dash-website p {
+    margin: 0;
+}
+
+.client-dash-socialLinks p {
+    margin: 0;
+
+}
+
+.client-dash-socialLinks {
+    margin-top: 15px;
+}
+
+.client-dash-icons {
+    display: flex;
+    gap: 20px;
+
+}
+
+
+.chat-form-container {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+.form-open {
+    right: 0;
+}
+
+.chat-form-subject {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+
+.link-organizer {
+    text-decoration: none;
+}
+
+.link-bill {
+    text-decoration: none;
+}

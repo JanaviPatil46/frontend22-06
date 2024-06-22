@@ -1,0 +1,65 @@
+/* Container styling */
+.mailbox-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+  }
+  
+  /* Email list styling */
+  .email-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Email item styling with hover effect */
+  .email-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: all 0.3s; /* Smooth transition on hover */
+  }
+  
+  .email-item:hover {
+    border-color: #888;
+    background-color: #f1f1f1; /* Change background on hover */
+  }
+  
+  /* Email header styling */
+  .email-header {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Email details styling */
+  .email-details {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Loading and error messages */
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+  }
+  
+  .no-emails {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+  }
+  

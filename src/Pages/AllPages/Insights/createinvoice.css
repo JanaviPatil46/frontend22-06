@@ -1,0 +1,131 @@
+.create-invoice-header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.invoce-actions-btns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.create-invoice-header-left{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+  }
+  
+
+  .invoice-form-container{
+    position: fixed;
+    top: 0;
+    right: -75%; 
+    width: 75%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .invoice-form-open {
+    right: 0;
+  }
+  .invoice_header_title{
+    padding: 20px;
+    display: flex;
+    background-color: rgb(218, 216, 216);
+    align-items: center;
+    justify-content: space-between;
+  }
+  .invoice-type {
+    display: flex;
+    width: 200px;
+    /* justify-content: space-around; */
+    background-color: #f0f0f0;
+    padding: 10px;
+   transition: 0.3s all;
+    border-radius: 5px;
+}
+
+.invoice-type a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* .invoice-type a:hover {
+    background-color: #ddd;
+} */
+
+.invoice-type a.active {
+    background-color: white;
+}
+.invoice-container{
+  /* border: 2px solid red; */
+  padding: 15px;
+  height: 80vh;
+
+  overflow-y: auto;
+}
+
+.input-box-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-box-one > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+
+
+.input-box-one input[type='text']
+{
+  padding: 8px 12px;
+  width: 100%;
+  border: 2px solid rgb(100, 149, 237);
+  border-radius: 10px;
+
+}
+.input-box-one select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ 
+}
+
+DatePicker{
+  width: 100%;
+}
+.billing-ivoice-buttons{
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.discount-amount {
+  color: green;
+}
