@@ -96,7 +96,10 @@ import StaticOrganizer from "../Pages/AllPages/Insights/StaticOrganizer.js";
 import EmailFetch from "../Pages/settings/EmailFetch.js";
 import Inboxemail from "../Pages/settings/Inboxemail.js";
 import SentEmail from "../Pages/settings/SentEmail.js";
-
+import OrganizerTempUpdate from "../Components/Templates/OrganizerTempUpdate.js";
+import CreateOrganizerUpdate from '../Pages/AllPages/Insights/createOrganizerUpdate.js'
+import CreateOrganizer from '../Pages/AllPages/Insights/createOrganizer.js';
+import InboxOrg from '../Pages/AllPages/Insights/Inbox.js'
 // import UpdateJobCard from "../Pages/AllPages/Insights/UpdateJobCard.js";
 const Path = () => {
   return (
@@ -105,7 +108,7 @@ const Path = () => {
         <Route path="/" element={<Sidebar />}>
           <Route index element={<Insights />} />
           <Route path="/accounts" element={<AccountsData />} />
-         
+         <Route path="/inbox" element={<InboxOrg/>}/>
           <Route path="*" element={<Error />} />
           <Route path="/staticorganizer" element={<StaticOrganizer/>}/>
           <Route path='/pipeline' element={<PipelineList />} ></Route>
@@ -114,6 +117,7 @@ const Path = () => {
           {/* <Route path="/tags" element={<TagCreate />} /> */}
           <Route path="/contacts" element={<ContactTable />} />
           <Route path="/invoiceupdate/:_id" element={<OneTimeInvoiceUpdate />} />
+          <Route path="/createOrganizer/:data" element={<CreateOrganizer />} />
           <Route path="/billinginvoices" element={<CreateInvoice />}>
             <Route path="onetime" element={<OneTimeInvoice />} />
             <Route path="recurring" element={<BillingRecurringInvoice />} />
@@ -144,6 +148,7 @@ const Path = () => {
             <Route path="pipelines" element={<PipelinesTemp />} />
             <Route path="pipelines/PipelineTemplateUpdate/:_id" element={<PipelineTempUpdate />} />
             <Route path="organizers" element={<OrgnizersTemp />} />
+            <Route path="organizers/OrganizerTempUpdate/:_id" element={<OrganizerTempUpdate />} />
             <Route path="folders/" element={<FoldersTemp />}></Route>
 
             <Route path="chats" element={<ChatsTemp />} />
@@ -160,6 +165,7 @@ const Path = () => {
           <Route path="services/ServiceTemplateUpdate/:_id" element={<ServiceTemplateUpdate />} />
 
           <Route path="/myaccount" element={<Myaccount />} />
+          <Route path="/CreateOrganizerUpdate/:_id" element={<CreateOrganizerUpdate />} />
           <Route path="/emailfetch" element={<EmailFetch />} />
           <Route path="/Inboxmail" element={<Inboxemail />} />
           <Route path="/Sentmail" element={<SentEmail />} />

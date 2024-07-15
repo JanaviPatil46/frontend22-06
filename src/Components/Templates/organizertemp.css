@@ -1,50 +1,195 @@
-.organizer-temp-header{
-    display: flex;
-    justify-content: space-between;
-}
-.organizer-template-form{
-    border: 2px solid grey;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 20px;
-    background-color: whitesmoke;
-}
-.section-name{
-    color: rgb(87, 85, 85);
-    font-size: 15px;
-    font-weight: 500;
-    background-color: rgb(194, 211, 224);
-    border: none;
-    border-radius: 5px;
-   cursor: pointer;
-   width: 100%;
-   padding: 8px 12px;
-}
-.Organizer-section{
-  width: 20%;
-    /* border: 2px solid blue; */
-}
-.section-details{
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    height: 120px;
-}
-.section-details:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.input-section{
-    padding: 8px 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    font-size: 15px;
+/* Define styles for the root container */
+._root_18ffc_1 {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  /* background-color: #f9f9f9; */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.section-details-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 5px 0 15px 0;
+/* Define styles for the section header */
+._root_7lm86_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Define styles for the section content */
+._root_a5ph5_1 {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Define styles for the input field */
+._fieldContainer_zwyj7_37 {
+  position: relative;
+}
+
+._inputPreviewBorder_zwyj7_5 {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+._inputPreview_zwyj7_5 {
+  display: flex;
+  align-items: center;
+}
+
+._inputPreviewText_zwyj7_43 {
+  flex-grow: 1;
+}
+
+/* Define styles for the action buttons */
+._action_7lm86_40 button {
+  background-color: transparent;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+._action_7lm86_40 button:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Define styles for the settings icon */
+.v2-icon-settings {
+  fill: rgb(154, 183, 226);
+}
+
+/* DropdownMenu.css */
+
+/* Add any additional styling you need here */
+.rc-dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.rc-dropdown-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rc-dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.rc-dropdown-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.rc-dropdown-menu-item-active {
+  background-color: #e6f7ff;
+}
+
+
+.section-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.section-container h3 {
+  margin-top: 0;
+}
+
+.section-textarea {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.form-element {
+  margin-bottom: 10px;
+}
+
+.form-element textarea {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.form-element .options-container {
+  padding-left: 20px;
+}
+
+.form-element .option-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.form-element .option-item input {
+  flex: 1;
+}
+
+.add-option-button,
+.delete-option-button,
+.add-element-button,
+.delete-section-button,
+.delete-button {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-option-button,
+.delete-option-button {
+  margin-left: 5px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.add-element-button,
+.delete-section-button {
+  display: block;
+  width: 100%;
+}
+
+.form-elements-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-elements-dropdown button {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.deletesection{
+  cursor: pointer;
+}
+.section-name{
+  border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden; 
+   text-overflow: ellipsis;
+   margin-bottom: 5px;
+}
+.input-section{
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 200px;
+  
 }

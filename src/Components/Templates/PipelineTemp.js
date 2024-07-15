@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from "react-select";
 import Switch from "react-switch";
-import { LuPlusCircle, LuPenLine } from "react-icons/lu";
+import { LuPlusCircle } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { SlQuestion } from "react-icons/sl";
 import DatePicker from 'react-datepicker'; // Import date picker
@@ -233,7 +233,8 @@ const CreatePipeline = () => {
             assignees: Assignees,
             name: Name,
             startdate: startDate,
-            stages: stages
+            stages: stages,
+
 
         });
         console.log(raw);
@@ -274,25 +275,6 @@ const CreatePipeline = () => {
     //get all templateName Record 
     const [pipelineData, setPipelineData] = useState([]);
 
-    // useEffect(() => {
-    //     const fetchPipelineData = async () => {
-    //         try {
-
-    //             const url = `${API_KEY}/workflow/pipeline/`;
-    //             const response = await fetch(url);
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch pipeline data');
-    //             }
-    //             const data = await response.json();
-    //             setPipelineData(data.pipeline);
-    //         } catch (error) {
-    //             console.error('Error fetching pipeline data:', error);
-    //         }
-    //     };
-
-    //     fetchPipelineData();
-    // }, []);
-
     useEffect(() => {
         fetchPipelineData();
     }, []);
@@ -314,7 +296,7 @@ const CreatePipeline = () => {
 
 
 
-    console.log(pipelineData)
+    // console.log(pipelineData)
 
 
 
@@ -385,6 +367,14 @@ const CreatePipeline = () => {
         setStages(newStages); // Update the state with the modified stages array
     };
 
+    const handleStageAutomation = (e, index, saveAutomation) => {
+        console.log(saveAutomation)
+        const newStages = [...stages]; // Create a copy of the stages array
+        newStages[index].automations = saveAutomation; // Update the name of the specific stage
+        setStages(newStages); // Update the state with the modified stages array
+        console.log(newStages)
+    };
+
 
     // automations
     const [activeAction, setActiveAction] = useState(null);
@@ -407,9 +397,12 @@ const CreatePipeline = () => {
 
     const [saveAutomation, setSaveAutomation] = useState(false);
 
-    const handleSaveAutomation = () => {
-        setSaveAutomation(!saveAutomation);
-          setAutoFormOpen(false);
+    const handleSaveAutomation = (selectedEmailTemp, selectedTags) => {
+        // setSaveAutomation(!saveAutomation);
+        setSaveAutomation({ selectedEmailTemp, selectedTags });
+        setAutoFormOpen(false);
+        // console.log('Selected Email Template:', selectedEmailTemp);
+        // console.log('Selected Tags:', selectedTags);
     }
 
     const toggleForm = () => {
@@ -442,6 +435,10 @@ const CreatePipeline = () => {
         setShowAutoMovesDropdown(false);
 
     };
+
+
+
+
     // Function to render content based on action
     const renderActionContent = (action) => {
         switch (action) {
@@ -461,7 +458,8 @@ const CreatePipeline = () => {
             case 'Send email':
                 return (
                     <div>
-                        <SendEmail />
+                        <SendEmail handleFormClose={handleFormClose} handleSaveAutomation={handleSaveAutomation} />
+
 
                     </div>
                 );
@@ -502,6 +500,11 @@ const CreatePipeline = () => {
                 return null;
         }
     };
+    const calculateWidth = (label) => {
+        const textWidth = label.length * 8;
+        return Math.min(textWidth, 200);
+    };
+
     return (
 
         <div className='create-pipeline-container ' >
@@ -769,17 +772,7 @@ const CreatePipeline = () => {
                                                 <span className="switch-label" style={{ cursor: "pointer", marginRight: '1px' }}>Priority</span>
                                             </div>
 
-
-
                                         </div>
-
-
-
-
-
-
-
-
 
                                     </div>
 
@@ -898,9 +891,58 @@ const CreatePipeline = () => {
 
                                                 {saveAutomation && (
                                                     <div className='automations-list'>
+                                                        <div>
+                                                            {items.map((item, index) => (
+                                                                <div key={item.id} >
+                                                                    <div className='item-card-header' style={{ display: 'flex', gap: '10px', fontSize: '20px', fontWeight: '550' }}>
+                                                                        {item.id}. {item.action}
+                                                                    </div>
+                                                                </div>
+                                                            ))}
 
+                                                        </div>
+                                                        <div>
+                                                            {saveAutomation.selectedEmailTemp ? saveAutomation.selectedEmailTemp.label : 'None'}
+                                                        </div>
+                                                        <div style={{ margin: '10px 0' }}>
+                                                            <strong>conditions</strong>
+                                                            <ul>
+                                                                {console.log(saveAutomation)}
+                                                                {/* onChange={(e) => handleStageAutomation(e, index, saveAutomation)} */}
+                                                                {/*  */}
+                                                                {saveAutomation.selectedTags.length > 0 ? (
+                                                                    saveAutomation.selectedTags.map(tag => (
+                                                                        <li
+                                                                            key={tag._id}
+                                                                            style={{
+                                                                                display: 'flex',
+                                                                                alignItems: 'center',
+                                                                                gap: '8px',
+                                                                                backgroundColor: tag.tagColour,
+                                                                                borderRadius: '20px',
+                                                                                color: '#fff',
+                                                                                fontSize: '12px',
+                                                                                fontWeight: '600',
+                                                                                textAlign: 'center',
+                                                                                border: 'none',
+                                                                                padding: '3px',
+                                                                                marginBottom: '5px',
+                                                                                marginRight: '5px',
+                                                                                display: 'inline-block',
+                                                                                width: `${calculateWidth(tag.tagName)}px`
+                                                                            }}
+                                                                        >
+                                                                            {tag.tagName}
+                                                                        </li>
+                                                                    ))
+                                                                ) : (
+                                                                    <li>No tags selected</li>
+                                                                )}
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 )}
+
 
                                                 <h3 style={{ fontSize: '15px', margin: '5px 0 5px 0' }}>Automove</h3>
                                                 <p style={{ fontSize: '14px' }}>Move jobs automatically when linked actions are completed</p>
@@ -950,6 +992,8 @@ const CreatePipeline = () => {
 
 
                             </div>
+
+
                             <div className='pipeline-btn'>
                                 <button className='btn1' onClick={createPipe} style={{ marginRight: '10px' }}>Save</button>
 
@@ -977,19 +1021,22 @@ const CreatePipeline = () => {
                         <div className='item-content col-12' style={{ padding: '20px', display: 'flex', flexDirection: 'column' }}>
                             <div className='item-template col-12' style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {items.map((item, index) => (
-                                    <div key={item.id} className="item-card" style={{ border: '1px solid #B2BEB5', borderRadius: '10px', padding: '10px' }}>
-                                        <div className='item-card-header' style={{ display: 'flex', gap: '10px', fontSize: '20px', fontWeight: '550' }}>
-                                            <RxDragHandleDots2 /> {item.id}. {item.action}
+                                    <div>
+                                        <div key={item.id} className="item-card" style={{ border: '1px solid #B2BEB5', borderRadius: '10px', padding: '10px' }}>
+                                            <div className='item-card-header' style={{ display: 'flex', gap: '10px', fontSize: '20px', fontWeight: '550' }}>
+                                                <RxDragHandleDots2 /> {item.id}. {item.action}
 
-                                            <div className='item-header' style={{ marginLeft: 'auto' }}>
+                                                <div className='item-header' style={{ marginLeft: 'auto' }}>
 
-                                                <p style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px' }}>
-                                                    {renderHeaderContent(item.action)}
-                                                </p>
+                                                    <p style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px' }}>
+                                                        {renderHeaderContent(item.action)}
+                                                    </p>
+                                                </div>
+                                                <RiDeleteBin6Line onClick={() => handleDeleteItems(item.id)} />
                                             </div>
-                                            <RiDeleteBin6Line onClick={() => handleDeleteItems(item.id)} />
+                                            {renderActionContent(item.action)}
+
                                         </div>
-                                        {renderActionContent(item.action)}
 
                                     </div>
                                 ))}
@@ -1011,11 +1058,7 @@ const CreatePipeline = () => {
                                 )}
                             </div>
                         </div>
-                        <div className='submit-buttons col-10' style={{ display: 'flex', gap: '10px', margin: '10px 20px', }}>
-                            <button type='submit' style={{ padding: '10px', borderRadius: '10px', cursor: 'pointer', background: 'blue', color: '#fff', border: 'none', fontSize: '15px' }} className='col-2' onClick={handleSaveAutomation}>Save</button>
-                            <button onClick={handleFormClose} style={{ padding: '10px', borderRadius: '10px', cursor: 'pointer', background: '#fff', color: 'blue', border: '1px solid blue', fontSize: '15px' }} className='col-2'>Cancle</button>
 
-                        </div>
                     </div>
                 </div>
             )}

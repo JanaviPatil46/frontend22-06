@@ -1,0 +1,85 @@
+.panel {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 5px;
+height: 80h;
+/* border: 2px solid black; */
+  width: 100%;
+  /* border-color: black; */
+
+}
+
+.organizerform-details {
+  /* border: '2px solid blue'; */
+  padding: 30px;
+  background-color: #f9f9f9
+}
+
+
+
+.react-switch {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.radio-btn {
+  margin-right: 15px;
+  margin-left: 15px;
+  display: 'flex';
+
+}
+
+
+.checkbox-container,
+.radio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.visually-hidden {
+  /* position: absolute; */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-button,
+.radio-button {
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  color: black;
+  border-radius: 10px;
+}
+
+.checkbox-button.selected,
+.radio-button.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.organizerInputBoxes {
+  border-radius: 5px;
+  width: 100%;
+  resize: none;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  height: '80px';
+  padding: 10px;
+}
+
+

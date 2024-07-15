@@ -5,7 +5,7 @@ import makeAnimated from 'react-select/animated';
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-const SendEmail = () => {
+const SendEmail = ({ handleFormClose, handleSaveAutomation }) => {
     const API_KEY = process.env.REACT_APP_API_IP;
 
     const [isConditionsFormOpen, setIsConditionsFormOpen] = useState(false);
@@ -22,16 +22,16 @@ const SendEmail = () => {
         setIsConditionsFormOpen(false);
     };
 
-    const handleCheckboxChange = (tagId) => {
-        const updatedSelectedTags = tempSelectedTags.includes(tagId)
-            ? tempSelectedTags.filter(id => id !== tagId)
-            : [...tempSelectedTags, tagId];
+    const handleCheckboxChange = (tag) => {
+        const updatedSelectedTags = tempSelectedTags.includes(tag)
+            ? tempSelectedTags.filter(t => t._id !== tag._id)
+            : [...tempSelectedTags, tag];
         setTempSelectedTags(updatedSelectedTags);
         setIsAnyCheckboxChecked(updatedSelectedTags.length > 0);
     };
 
     const handleAddTags = () => {
-        setSelectedTags([...selectedTags, ...tempSelectedTags.filter(tagId => !selectedTags.includes(tagId))]);
+        setSelectedTags([...selectedTags, ...tempSelectedTags.filter(tag => !selectedTags.some(t => t._id === tag._id))]);
         setIsConditionsFormOpen(false);
         setTempSelectedTags([]);
     };
@@ -39,7 +39,7 @@ const SendEmail = () => {
     const animatedComponents = makeAnimated();
     const [addEmailTemp, setAddEEmailTemp] = useState([]);
     const [selectedEmailTemp, setSelectedEmailTemp] = useState();
-    console.log(selectedEmailTemp);
+
     const handleEmailtemp = (selectedOptions) => {
         setSelectedEmailTemp(selectedOptions);
     };
@@ -65,7 +65,7 @@ const SendEmail = () => {
     }));
 
     const [tags, setTags] = useState([]);
-  
+
     useEffect(() => {
         fetchDatas();
     }, []);
@@ -90,21 +90,16 @@ const SendEmail = () => {
         setSearchTerm(e.target.value);
     };
 
-    const filteredTags = tags.filter(tag => 
+    const filteredTags = tags.filter(tag =>
         tag.tagName.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const selectedTagElements = selectedTags.map(tagId => {
-        const tag = tags.find(tag => tag._id === tagId);
-        return tag ? (
-            <div key={tag._id} style={{ backgroundColor: tag.tagColour, borderRadius: '20px', color: '#fff', fontSize: '12px', fontWeight: '600', textAlign: 'center', border: 'none', padding: '3px', marginBottom: '5px', marginRight: '5px', display: 'inline-block', width: `${calculateWidth(tag.tagName)}px` }}>
-                {tag.tagName}
-            </div>
-        ) : null;
-    });
-    const savedData = {
-      selectedEmailTemp
-    };
+    const selectedTagElements = selectedTags.map(tag => (
+        <div key={tag._id} style={{ backgroundColor: tag.tagColour, borderRadius: '20px', color: '#fff', fontSize: '12px', fontWeight: '600', textAlign: 'center', border: 'none', padding: '3px', marginBottom: '5px', marginRight: '5px', display: 'inline-block', width: `${calculateWidth(tag.tagName)}px` }}>
+            {tag.tagName}
+        </div>
+    ));
+
     return (
         <>
             <div className='email-body' style={{ paddingTop: '20px' }}>
@@ -125,7 +120,7 @@ const SendEmail = () => {
                 </div>
                 <div style={{ marginTop: '20px' }}>
                     {selectedTagElements.length > 0 && (
-                        <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <label>only for:</label>
                             <div style={{ marginTop: '10px' }}>
                                 {selectedTagElements}
@@ -138,6 +133,10 @@ const SendEmail = () => {
                         Add conditions
                     </li>
                 </div>
+            </div>
+            <div className='submit-buttons col-10' style={{ display: 'flex', gap: '10px', margin: '30px 0', }}>
+                <button type='submit' style={{ padding: '10px', borderRadius: '10px', cursor: 'pointer', background: 'blue', color: '#fff', border: 'none', fontSize: '15px' }} className='col-2' onClick={() => handleSaveAutomation(selectedEmailTemp, selectedTags)}>Save</button>
+                <button onClick={handleFormClose} style={{ padding: '10px', borderRadius: '10px', cursor: 'pointer', background: '#fff', color: 'blue', border: '1px solid blue', fontSize: '15px' }} className='col-2'>Cancel</button>
             </div>
 
             <div className={`conditions-form-container ${isConditionsFormOpen ? "conditions-form-open" : ""}`}>
@@ -156,22 +155,22 @@ const SendEmail = () => {
                     <div style={{ padding: '10px' }}>
                         <p>Apply automation only for accounts with these tags</p>
                         <div style={{ position: 'relative', marginTop: '20px' }}>
-                            <input 
-                                type="text" 
-                                placeholder="Search..." 
-                                style={{ paddingLeft: '30px' }} 
-                                className="tagsearch" 
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                style={{ paddingLeft: '30px' }}
+                                className="tagsearch"
                                 value={searchTerm}
                                 onChange={handleSearchChange}
                             />
                             <AiOutlineSearch style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', fontSize: '20px' }} />
                         </div>
                         <div style={{ marginTop: '20px' }}>
-                          <hr/>
+                            <hr />
                             {filteredTags.map(tag => (
-                                <div key={tag._id} style={{ margin: '5px 0 5px 0', display: 'flex', gap: '30px', borderBottom:'1px solid grey',}}>
-                                    <input type="checkbox" onChange={() => handleCheckboxChange(tag._id)} checked={tempSelectedTags.includes(tag._id)} />
-                                    <p style={{backgroundColor: tag.tagColour,  width: `${calculateWidth(tag.tagName)}px`,  borderRadius:'20px',  color:'#fff', fontSize:'12px', fontWeight:'600', textAlign:'center', border:'none',padding:'3px',marginBottom:'5px'}}>{tag.tagName}</p>
+                                <div key={tag._id} style={{ margin: '5px 0 5px 0', display: 'flex', gap: '30px', borderBottom: '1px solid grey', }}>
+                                    <input type="checkbox" onChange={() => handleCheckboxChange(tag)} checked={tempSelectedTags.includes(tag)} />
+                                    <p style={{ backgroundColor: tag.tagColour, width: `${calculateWidth(tag.tagName)}px`, borderRadius: '20px', color: '#fff', fontSize: '12px', fontWeight: '600', textAlign: 'center', border: 'none', padding: '3px', marginBottom: '5px' }}>{tag.tagName}</p>
                                 </div>
                             ))}
                         </div>
@@ -181,7 +180,9 @@ const SendEmail = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </>
     );
 };
